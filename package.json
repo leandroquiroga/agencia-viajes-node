@@ -1,0 +1,22 @@
+{
+  "name": "agencia-turismo-app",
+  "version": "1.0.0",
+  "description": "Agencia de Viajes",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "type": "module",
+  "author": "Leandro Quiroga",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3",
+    "pug": "^3.0.2",
+    "sequelize": "^6.12.0-beta.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

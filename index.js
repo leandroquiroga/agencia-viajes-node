@@ -29,5 +29,5 @@ app.use((req, res, next) => {
 app.use('/', router);
 
 app.listen(port, () => {
-    console.log(`Listenning port: ${port}`)
+    console.log(`Listenning port: http://www.localhost:${port}`)
 })

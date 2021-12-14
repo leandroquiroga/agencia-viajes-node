@@ -1,11 +1,11 @@
 import Sequelize from 'sequelize'
 
 const db = new Sequelize('agenciaviajes', 'root', 'colorado14', {
-    host: '127.0.0.1',
+    host: 'localhost',
     port: '3306',
     dialect: 'mysql',
     define: {
-        timetamps: false
+        timestamps: false
     },
     pool: {
         max: 5,

@@ -1,0 +1,9 @@
+extends ./layout/index
+
+block main
+    main.container.mt-5    
+        div.row 
+            div.col-md-5
+                img(src=`assets/img/destinos_${result.imagen}_ln.jpg`, alt="", class='img-fluid')
+            div.col-md-7
+                h1.text-center #{result.titulo}

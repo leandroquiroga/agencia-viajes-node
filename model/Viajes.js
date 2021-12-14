@@ -1,7 +1,7 @@
 import Sequelize from "sequelize";
-import db from "../config/database";
+import db from "../config/database.js";
 
-const Viaje = db.define('viaje', {
+export const Viajes = db.define('viajes', {
     titulo: {
         type: Sequelize.STRING
     },
@@ -26,6 +26,5 @@ const Viaje = db.define('viaje', {
     slug: {
         type: Sequelize.STRING
     },
-})
-
-export default Viaje;
+});
+// export default Viajes;

@@ -80,6 +80,17 @@ h3 {
     left: 0;
     width: 100%;
 }
+.card-travels{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    row-gap: 15px;
+    column-gap: 20px;
+    place-items: center;
+}
+.card-date, .text-disponible{
+    font: 400 .7rem var(--font)
+}
 .nav-link.active {
     border-bottom: 5px solid var(--white);
 }

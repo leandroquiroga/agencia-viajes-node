@@ -1,6 +1,22 @@
 extends ./layout/index
 
 block main
-    main.container.mt-5    
-        .row 
-            h1.fw-bold #{pagina}
+    div.container.my-5
+        h1.fw-bold.text-center #{pagina}
+        main.container.mt-5    
+            div.card-travels
+                each travel in result
+                    div.card.show.shadow.rounded(style='width: 300px;')
+                        img.card-img-top(src=`assets/img/destinos_${travel.imagen}.jpg` alt='...')
+                        div.card-body
+                            h3.card-title.text-uppercase= travel.titulo
+                            div.p-1.mb-2
+                                img(style='width: 25px; heigth: 25px')(src="assets/svg/icon_calendar.svg", alt="calendar") 
+                                small.card-date  Ida: #{travel.fecha_ida} -  Vuelta: #{travel.fecha_vuelta} 
+                            div.p-1.mb-2
+                                img(style='width: 25px; heigth: 25px')(src="assets/svg/icon_user.svg", alt="calendar") 
+                                small.text-disponible #{travel.disponibles} Disponibles 
+                            div.p-1.mb-2
+                                span.text-disponible.d-block.text-truncate(style='max-width: 250px;')= travel.descripcion
+                           
+                            a(href=`viajes/${travel.slug}`, class="btn btn-success btn-block w-100 ") Más Información

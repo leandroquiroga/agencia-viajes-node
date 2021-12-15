@@ -1,4 +1,5 @@
 import { Viajes } from '../model/Viajes.js';
+import { Testimonial } from './../model/Testimoniales.js';
 
 const pageInit = (req, res) => {
     res.render('inicio', {
@@ -11,10 +12,16 @@ const pageUs = (req, res) => {
     });
 };
 
-const pageTestimonials = (req, res) => {
-    res.render('testimonios', {
-        pagina: 'Testimonios'
-    });
+const pageTestimonials = async (req, res) => {
+    try {
+        const testimonials = await Testimonial.findAll()
+        res.render('testimonios', {
+            pagina: 'Testimonios',
+            testimonials
+        });   
+    } catch (error) {
+        console.log(error)
+    }
 };
 
 const pageTravels = async (req, res) => {
@@ -38,6 +45,7 @@ const pageTripDetails = async (req, res) => {
         console.log(error)
     }
 }
+
 
 export { 
     pageInit,

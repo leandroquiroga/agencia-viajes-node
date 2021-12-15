@@ -33,6 +33,18 @@ h3 {
 .logo-icon{
     width: 125px;
 }
+.icon-error, 
+.icon-succes{
+    width: 15px;
+}
+.text-error,
+.text-succes,
+.text-descripcion-comments{
+    font: 600 .8rem var(--font)
+}
+.title-comments{
+    font: 400 1.5rem var(--font)
+}
 .btn-success {
     background-color: var(--pink);
     border-color: var(--pink);

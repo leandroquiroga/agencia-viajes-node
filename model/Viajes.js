@@ -27,4 +27,3 @@ export const Viajes = db.define('viajes', {
         type: Sequelize.STRING
     },
 });
-// export default Viajes;

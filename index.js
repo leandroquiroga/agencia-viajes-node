@@ -10,6 +10,8 @@ authenticateDB();
 // Port 
 const port = process.env.PORT || 4000;
 
+// Body Parser
+app.use(express.urlencoded({extended:true}))
 // Pug
 app.set('view engine', 'pug');
 

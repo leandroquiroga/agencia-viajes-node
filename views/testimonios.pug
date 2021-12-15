@@ -2,5 +2,43 @@ extends ./layout/index
 
 block main
     main.container.mt-5    
-        .row 
-            h1.fw-bold #{pagina}
+        h1.fw-bold.text-center.mt-5 #{pagina}
+
+        h3.text-center.my-3 Nuestros clientes tambien nos valoran
+        if(testimonials)
+            div.card-travels.testimoniales
+                each comments in testimonials
+                    div.card.mb-3.shadow.rounded(style='height: 275px; width: 16rem;')
+                        .column.g-0
+                            .col-md-4
+                                img.img-fluid.rounded-start(src='/assets/img/quote.jpg' alt='quote')
+                            .col
+                                .card-body
+                                    p.text-descripcion-comments
+                                        | #{comments.message}
+                                    footer.blockquote-footer= comments.name
+        div.row 
+            h2.d-block.text-center.w-100 Agrega un testimonio
+            div.row.col.justify-content-center
+                div.col-md-8
+                    form(action="/testimonios", method="post")
+                        .form-group 
+                            label(for="name") Nombre:
+                            input#name(type="text", placeholder="Ingrese su nombre...", name="name", value= name, autofocus, class="form-control my-2") 
+                        .form-group 
+                            label(for="email") Email:
+                            input#email(type="email", placeholder="Ingrese su email...", name="email", value= email, class="form-control my-2") 
+                        .form-group                              
+                            label(for="message") Mensaje:
+                            textarea#message(type="text", placeholder="Ingrese un mensaje...", name="message", cols="30", rows="5", maxlength='250', sentences, class="form-control my-2")= message
+                        
+                        if(arrError)
+                            each message in arrError
+                                div.alert.alert-danger.alert-dismissible.fade.show.d-flex.justify-content-around.p-0.m-2(role='alert', style="height: 50px;")
+                                    img(src="assets/svg/icon_alert.svg", alt="alert error", class="mx-2 icon-error")
+                                    div.d-flex.justify-content-center.align-items-center
+                                        p.text-center.text-error.m-3= message.textErr
+                                    div.d-flex.justify-content-center.align-items-center.p-2
+                                        button.btn-close.py-3(type='button' data-bs-dismiss='alert' aria-label='Close')
+                        input.btn.btn-success.btn-block.w-100.my-3(type="submit")
+                        

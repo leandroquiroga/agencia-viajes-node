@@ -1,8 +1,67 @@
 extends ./layout/index
-
+block slider 
+    .slider     
+        h1.text-uppercase Rio de Janeiro
+        em aventura 
 block main
     main.container.mt-5    
-        .row 
-            h1.fw-bold #{pagina}
+        h2.text-center.mt-5 Sobre nosotros 
+            .row.mt-5
+                div.col-md-6 
+                    p.text-inicio   Somos una empresa turistica con 20 años alegrando familias enteras, somos la empresa mas reconocida de Argentina, 
+                        contamos con viajes por toda Argentina, como tambien por todo el mundo. Contamos con la mejor financiación 
+                        y los mejores metodos de pago, aceptamos todas las tarjetas de creditos y con la ultima noticia tambien 
+                        aceptamos pagos con Cryptos. Actualemente estamos adheridos a el plan Pre-viaje dispuesto por el 
+                        Gobierno para cualquier viaje de la Republica Argentina con una devolucíon del 50% en una Tarjeta del 
+                        Banco Nacion para que la puedas usar como vos quieras. 
+
+                    p.text-inicio   A lo largo de todos estos años hicimos felices a mas de 3.000.000 de familias que buscaban pasar las 
+                        mejores vacaciones de su vida. Fuimos elegida la mejor empresa turistica en 8 oportunidades, de las 
+                        cuales 4 años fueron concecutivos.
+                    
+                    p.text-inicio   Contamos con 25 locales distribuidos a lo largo y ancho de toda la Argentina para brindarle la 
+                        mejor atención, asesorarlos de la mejor manera.   
+                div.col-md-6  
+                    img(src="assets/img/inicio_nosotros.jpg", alt="inicio nosotros", class="img-fluid" )
+        h2.text-center.mt-5 Nuestros mejores viajes          
+        div.card-travels
+            each travel in travelSelected
+                div.card.show.shadow.rounded(style='width: 300px;')
+                    img.card-img-top(src=`assets/img/destinos_${travel.imagen}.jpg` alt='...')
+                    div.card-body
+                        h3.card-title.text-uppercase= travel.titulo
+                        div.p-1.mb-2
+                            img(style='width: 25px; heigth: 25px')(src="assets/svg/icon_calendar.svg", alt="calendar") 
+                            small.card-date  Ida: #{travel.fecha_ida} -  Vuelta: #{travel.fecha_vuelta} 
+                        div.p-1.mb-2
+                            img(style='width: 25px; heigth: 25px')(src="assets/svg/icon_user.svg", alt="calendar") 
+                            small.text-disponible #{travel.disponibles} Disponibles 
+                        div.p-1.mb-2
+                            span.text-disponible.d-block.text-truncate(style='max-width: 250px;')= travel.descripcion
+                        
+                        a(href=`viajes/${travel.slug}`, class="btn btn-success btn-block w-100 ") Más Información
+        div.container
+            h2.text-center.mt-5 Nuestras mejores valoraciones
+            if(testimonialsIndex)
+                div.card-travels.testimoniales
+                    each comments in testimonialsIndex
+                        div.card.mb-3.shadow.rounded(style='height: 275px; width: 16rem;')
+                            .column.g-0
+                                .col-md-4
+                                    img.img-fluid.rounded-start(src='/assets/img/quote.jpg' alt='quote')
+                                .col
+                                    .card-body
+                                        p.text-descripcion-comments
+                                            | #{comments.message}
+                                        footer.blockquote-footer= comments.name
         div.py-5
             img(src="assets/img/pre_viaje.jpg", alt="banner previaje", class="img-fluid")
+        div.descuento
+            div.container
+                div.row
+                    div.col-md-6
+                        div.contenido.text-center
+                            h3.fw-bold 15% de descuento
+                            p.titulo.fw-bold Viaje a Canada
+                            p.fecha.fw-bold  20 de Junio 2022 al 15 de Julio del 2020
+                            p.precio.fw-bold $80,750

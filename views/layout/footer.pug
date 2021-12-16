@@ -1,11 +1,23 @@
 footer.container.py-4
     div.row
-        div.col-md-6
-            nav.nav.footer.justify-content-center.justify-content-md-start
+        div.col-md-8
+            nav.nav.footer.justify-content-center.justify-content-md-start.mb-4
                 a.nav-link.nav-ancla.text-decoration-none.text-black.fw-bold(href="/nosotros") Nosotros 
                 a.nav-link.nav-ancla.text-decoration-none.text-black.fw-bold(href="/viajes") Viajes
                 a.nav-link.nav-ancla.text-decoration-none.text-black.fw-bold(href="/testimonios") Testimonios
-        div.col
-            p.copyrigth.text-center.text-md-rigth.text-black.fw-bold
-                | Todos los derechos reservados
-                span  #{yearCurrently}
+            img(src="assets/img/banner-pagos.jpg", alt="metodos de pago", class="img-fluid")
+        div.col-md-4
+            div.row.d-flex.justify-content-center
+                p.copyrigth.text-md-rigth.text-black.fw-bold
+                    | Todos los derechos reservados
+                    span  #{yearCurrently}
+                div.row
+                    div.d-flex.justify-content-start
+                        img(src="assets/svg/icono_whatsapp.svg", alt="whatsapp", class="icon-footer mx-2")
+                        p.text-footer.mt-3  Whatsapp: (011) 4582-8423
+                    div.d-flex.justify-content-start
+                        img(src="assets/svg/icono_gmail.svg", alt="gmail", class="icon-footer mx-2")
+                        p.text-footer.mt-3  Email: agenciaviajes@gmail.com
+                    div.d-flex.justify-content-start
+                        img(src="assets/svg/icono_location.svg", alt="location", class="icon-footer mx-2")
+                        p.text-footer.mt-3  Direccion: Av. Alem 570 2° piso CABA

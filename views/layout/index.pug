@@ -14,7 +14,8 @@ html(lang="en")
             include ./../../public/css/style.css
         script 
             include ./../../node_modules/bootstrap/dist/js/bootstrap.min.js 
-    body
+    body(class= className)
         include header 
+        block slider
         block main
         include footer

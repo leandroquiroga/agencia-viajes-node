@@ -12,6 +12,7 @@
     --pink-dark__two: #C0074e;
     --gray: #ffffff80;
     --dark-transparent: #00000080;
+    --dark: #202020
 }
 body {
     font-family: var(--font);
@@ -34,8 +35,17 @@ h3 {
     width: 125px;
 }
 .icon-error, 
-.icon-succes{
+.icon-succes,{
     width: 15px;
+}
+.icon-footer{
+    width: 25px;
+}
+.text-inicio{
+    font: 400 1.4rem var(--font);
+    color: var(--dark);
+    text-align: left;
+    line-height: 30px;
 }
 .text-error,
 .text-succes,
@@ -57,7 +67,7 @@ h3 {
     border-color: var(--pink-dark__two);
 }
 .slider {
-    background: url(../img//superior.jpg);
+    background: url(assets/img/superior.jpg);
     min-height: 600px;
     height: 100vh;
     background-size: cover;
@@ -68,6 +78,7 @@ h3 {
     color: var(--white);
 }
 .slider h1 {
+    font-size: 3rem;
     color: var(--white);
 }
 .slider em {
@@ -130,7 +141,7 @@ header .nav a,footer .nav a,
 }
 .descuento {
     height: 400px;
-    background-image: linear-gradient( var(--dark-transparent) 0%,  var(--dark-transparent) 100%),  url(../img/cupon.jpg);
+    background-image: linear-gradient( var(--dark-transparent) 0%,  var(--dark-transparent) 100%),  url(assets/img/cupon.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -143,7 +154,7 @@ header .nav a,footer .nav a,
             var(--dark-transparent) 50%, 
             transparent 50%, 
             transparent 100%
-        ), url(../img/cupon.jpg);
+        ), url(assets/img/cupon.jpg);
     }
 }
 .descuento .contenido {
@@ -191,4 +202,7 @@ i {
     color: var(--pink);
     font-weight: bold;
     margin-top: 1rem;
+}
+.text-footer{
+    font: 600 1rem var(--font)
 }

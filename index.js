@@ -1,14 +1,14 @@
 import express from 'express';
 import authenticateDB from './config/authenticateDB.js';
 import router from './routes/index.js';
+import donenv from 'dotenv'
 
+// variables enverioment
+donenv.config({ path: 'variable.env' });
 
 const app = express();
 // Connecting DB
 authenticateDB();
-
-// Port 
-const port = process.env.PORT || 4000;
 
 // Body Parser
 app.use(express.urlencoded({extended:true}))
@@ -30,6 +30,11 @@ app.use((req, res, next) => {
 // Router
 app.use('/', router);
 
-app.listen(port, () => {
-    console.log(`Listenning port: http://www.localhost:${port}`)
+
+// configurate PORT and HOST 
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 4000;
+
+app.listen(port, host,  () => {
+    console.log(`Servidor OK!`)
 })
